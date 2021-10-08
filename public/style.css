@@ -1,0 +1,26 @@
+
+/* div {
+    border: solid 1px black;
+} */
+
+
+.abc {
+    display: flex;
+    flex-direction: column;
+}
+
+.def {
+    display: flex;
+}
+
+.neat {
+    width: 20%;
+}
+
+.nifty {
+    width: 20%;
+}
+
+.nerfty {
+    width: 20%;
+}

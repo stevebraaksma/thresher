@@ -11,6 +11,16 @@
 
 <h1>🦈 Thresher EMS Solutions</h1>
 
+<h3>Project History</h3>
+<ul>
+    <% for(let i = 0; i < projects.length; i++) { %>   
+    <li>
+    <a href="/projects/<%=projects[i]._id %>">  <%=projects[i].projectName%>  </a>
+
+    </li>
+    <%  }  %>
+
+</ul>
 
     
 </body>

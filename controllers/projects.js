@@ -6,9 +6,8 @@ const Project = require('../models/project');
 
 
 // index route
-projectsRouter.get('/projects', (req, res) => {
+projectsRouter.get('/projects', requiresAuth(), (req, res) => {
     Project.find({}, (err, foundProjects) => {
-        // console.log(foundProjects)
         res.render('index.ejs', {
             projects: foundProjects
         });
@@ -17,40 +16,33 @@ projectsRouter.get('/projects', (req, res) => {
 
 
 // new route
-projectsRouter.get('/projects/new', (req, res) => {
+projectsRouter.get('/projects/new', requiresAuth(), (req, res) => {
     res.render('new.ejs', {
         currentLoggedInUser: req.oidc.user.name
-    })
-
-
-
-
-
-    console.log('hooptee');
-    // console.log(res.body);
-
+    });
 });
-
-
-
-
-
 
 
 // create route
 projectsRouter.post('/projects', requiresAuth(), (req, res) => {
     console.log(req.oidc.user.name);
     Project.create(req.body, (err, createdProject) => {
-        // console.log(req.oidc.user.name);
-        // console.log(typeof req.oidc.user.name)
-        
-        // req.body.createdBy = req.oidc.user.name;
-        // createdProject.body.createdBy = req.oidc.user.name
-        // console.log(req.body)
         res.redirect('/projects');
     });
 });
 
+
+
+// show route
+projectsRouter.get('/projects/:id', (req, res) => {
+    Project.findById(req.params.id, (err, foundProject) => {
+        res.render('show.ejs', {
+            project: foundProject
+        });
+
+        // res.send('got it')
+    });
+});
 
 
 

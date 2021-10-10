@@ -12,6 +12,40 @@
 <h1>🦈 Thresher EMS Solutions</h1>
 
 
+<section>
+    Project Name: <br>
+    <%=project.projectName%>
+</section><br>
+<section>
+    Created By: <br>
+    <%=project.createdBy%>
+</section><br>
+<section>
+    Created On: <br>
+    <%=project.createdAt%>
+</section><br>
+<section>
+    Updated On: <br>
+    <%=project.updatedAt%>
+
+    <br><br>
+
+</section>
+
+
+
+
+<%console.log(project)%>
+
+<% for (let i = 0; i < project.mfgPn.length; i++)  { %>   
+    <%= project.mfgPn[i] %><br>
+    <%= project.partQty[i] %><br>
+    <%= project.internalPn[i] %><br>
+    <br><br>
+
+
+
+<%  }  %>
     
 </body>
 </html>

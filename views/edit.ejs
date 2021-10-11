@@ -11,11 +11,13 @@
 
 <h1>🦈 Thresher EMS Solutions</h1>
 
+<h2>Edit Project</h2>
 
-<form action="/projects" method="POST">
+
+<form action="/projects/<%= project._id %>?_method=PUT" method="POST">
 
 <label for="projectName">Project Name: </label><br>
-<input type="text" id="prj-name" name="projectName" size="24"><br><br>
+<input type="text" id="prj-name" name="projectName" value="<%= project.name%>" size="24"><br><br>
 
 <input type="hidden" id="createdBy" name="createdBy" value="<%=currentLoggedInUser%>">
 
@@ -37,7 +39,7 @@
 <div class="abc">
     <div class="def">
         <div class="neat">
-            <input type="text" name="mfgPn">
+            <input type="text" name="mfgPn" value="<%=project.mfgPn%>">
         </div>
         <div class="nifty">
             <input type="text" name="partQty">

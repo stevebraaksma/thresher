@@ -29,6 +29,8 @@ projectsRouter.get('/projects/new', requiresAuth(), (req, res) => {
 
 // (delete route)
 
+
+
 // (update route)
 projectsRouter.put('/projects/:id', (req, res) => {
     Project.findByIdAndUpdate(
@@ -45,6 +47,7 @@ projectsRouter.put('/projects/:id', (req, res) => {
 projectsRouter.post('/projects', requiresAuth(), (req, res) => {
     console.log(req.oidc.user.name);
     Project.create(req.body, (err, createdProject) => {
+        console.log(createdProject)
         res.redirect('/projects');
     });
 });
@@ -61,16 +64,12 @@ projectsRouter.get('/projects/:id/edit', (req, res) => {
 });
 
 
-
-
 // show route
 projectsRouter.get('/projects/:id', (req, res) => {
     Project.findById(req.params.id, (err, foundProject) => {
         res.render('show.ejs', {
             project: foundProject
         });
-
-        // res.send('got it')
     });
 });
 

@@ -1,13 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
+
 const projectSchema = new Schema({
     projectName: String,
     createdBy: String,
-    mfgPn: [String],
-    partQty: [Number],
-    internalPn: [String],
-}, {timestamps: true});
+
+    bom: [{
+        mfgPnBom: String,
+        partQtyBom: Number,
+        internalPnBom: String,
+    }],
+
+    mfgPn: [String],      // will be removed
+    partQty: [Number],   // will be removed
+    internalPn: [String],    // will be removed
+}, {timestamps: true});    // will be removed
 
 const Project = mongoose.model('Project', projectSchema);
 

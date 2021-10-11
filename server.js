@@ -36,7 +36,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 // middleware
 app.use(auth(config));
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use(express.static('public'));

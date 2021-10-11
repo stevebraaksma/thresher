@@ -27,3 +27,7 @@ div {
 .nerfty {
     width: 20%;
 }
+
+.show-page span {
+    display: inline-block;
+}

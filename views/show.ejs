@@ -33,23 +33,22 @@
 </section>
 
 <section>
-    <a href="/projects/<%= project._id %>/edit">Edit</a>
+    <a href="/projects/<%= project._id %>/edit">Edit</a><br><br>
 </section>
 
-
-
-
-<%console.log(project)%>
-
-<% for (let i = 0; i < project.mfgPn.length; i++)  { %>   
-    <%= project.mfgPn[i] %><br>
-    <%= project.partQty[i] %><br>
-    <%= project.internalPn[i] %><br>
+<div>
+<% for (let i = 0; i < project.bom.length; i++)  { %>   
+    <%= project.bom[i].mfgPnBom %><br>
+    <%= project.bom[i].partQtyBom %><br>
+    <%= project.bom[i].internalPnBom %><br>
     <br><br>
 
 
 
 <%  }  %>
+
+
+</div>
     
 </body>
 </html>

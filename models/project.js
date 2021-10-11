@@ -8,9 +8,9 @@ const projectSchema = new Schema({
     createdBy: String,
 
     bom: [{
-        mfgPnBom: String,
-        partQtyBom: Number,
-        internalPnBom: String,
+        mfgPnBom: [String],
+        partQtyBom: [Number],
+        internalPnBom: [String],
     }],
 
     mfgPn: [String],      // will be removed

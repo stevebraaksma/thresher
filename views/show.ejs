@@ -37,14 +37,22 @@
 </section>
 
 <div>
-<% for (let i = 0; i < project.bom.length; i++)  { %>   
-    <%= project.bom[i].mfgPnBom %><br>
-    <%= project.bom[i].partQtyBom %><br>
-    <%= project.bom[i].internalPnBom %><br>
-    <br><br>
 
+<% for (let i = 0; i < project.bom[0].mfgPnBom.length; i++)  { %>  
 
+    <%console.log(project.bom)   %> 
 
+    <%console.log(project.bom[0].mfgPnBom.length)  %>
+
+   mfg Pn  <br> <%= project.bom[0].mfgPnBom[i] %>  <br>
+   party qty  <br> <%= project.bom[0].partQtyBom[i] %> <br>
+   internal pn  <br> <%= project.bom[0].internalPnBom[i] %> <br>
+   <br><br>
+ 
+ 
+ 
+ 
+ 
 <%  }  %>
 
 

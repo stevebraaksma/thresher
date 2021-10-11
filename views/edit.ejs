@@ -17,7 +17,7 @@
 <form action="/projects/<%= project._id %>?_method=PUT" method="POST">
 
 <label for="projectName">Project Name: </label><br>
-<input type="text" id="prj-name" name="projectName" value="<%= project.name%>" size="24"><br><br>
+<input type="text" id="prj-name" name="projectName" value="<%= project.projectName%>" size="24"><br><br>
 
 <input type="hidden" id="createdBy" name="createdBy" value="<%=currentLoggedInUser%>">
 
@@ -36,39 +36,23 @@
     </div>
 </div>
 
-<div class="abc">
-    <div class="def">
-        <div class="neat">
-            <input type="text" name="mfgPn" value="<%=project.mfgPn%>">
-        </div>
-        <div class="nifty">
-            <input type="text" name="partQty">
-        </div>
-        <div class="nerfty">
-            <input type="text" name="internalPn">
-        </div>
-    </div>
-</div>
+<% for (let i = 0; i < 10; i++) { %> 
 
 <div class="abc">
     <div class="def">
         <div class="neat">
-            <input type="text" name="mfgPn">
+            <input type="text" name="bom[mfgPnBom]" value="<%=project.bom[0].mfgPnBom[i]%>">
         </div>
         <div class="nifty">
-            <input type="text" name="partQty">
+            <input type="text" name="bom[partQtyBom]" value="<%=project.bom[0].partQtyBom[i]%>">
         </div>
         <div class="nerfty">
-            <input type="text" name="internalPn">
+            <input type="text" name="bom[internalPnBom]" value="<%=project.bom[0].internalPnBom[i]%>">
         </div>
     </div>
 </div>
 
-<div>
-    <span></span>
-</div>
-<span></span>
-
+<% }  %>
 
 
 

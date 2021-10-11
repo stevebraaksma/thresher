@@ -35,11 +35,8 @@ projectsRouter.get('/projects/new', requiresAuth(), (req, res) => {
 projectsRouter.put('/projects/:id', (req, res) => {
     Project.findByIdAndUpdate(
         req.params.id, 
-        req.body, {
-            new: true,
-        },    
-        (err, updatedProduct) => {
-        res.redirect(`/projects/${req.params.id}`);
+        req.body, () => {
+            res.redirect(`/projects/${req.params.id}`);
     });
 });
 
@@ -47,10 +44,14 @@ projectsRouter.put('/projects/:id', (req, res) => {
 projectsRouter.post('/projects', requiresAuth(), (req, res) => {
     console.log(req.oidc.user.name);
     Project.create(req.body, (err, createdProject) => {
-        console.log(createdProject)
+        console.log(createdProject);
         res.redirect('/projects');
     });
 });
+
+// excel create route
+
+
 
 
 // edit route

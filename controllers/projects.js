@@ -14,24 +14,24 @@ const Project = require('../models/project');
 
 
 /// excel create route
-projectsRouter.post('/projects', upload.single('uploaded_file'), function (req, res) {
-    // req.file is the name of your file in the form above, here 'uploaded_file'
-    // req.body will hold the text fields, if there were any 
-    console.log(req.file, req.body)
-    const myFile = req.file.filename;
-    console.log(myFile);
-    const workSheetsFromFile = xlsx.parse(`public/${myFile}`);
-    console.log(workSheetsFromFile);
-    console.log(workSheetsFromFile[0].data);
+// projectsRouter.post('/projects', upload.single('uploaded_file'), function (req, res) {
+//     // req.file is the name of your file in the form above, here 'uploaded_file'
+//     // req.body will hold the text fields, if there were any 
+//     console.log(req.file, req.body)
+//     const myFile = req.file.filename;
+//     console.log(myFile);
+//     const workSheetsFromFile = xlsx.parse(`public/${myFile}`);
+//     console.log(workSheetsFromFile);
+//     console.log(workSheetsFromFile[0].data);
 
-    const bomData = workSheetsFromFile[0].data;
+//     const bomData = workSheetsFromFile[0].data;
 
-    res.render('excelformsubmit.ejs', {
-        project: bomData,
-        currentLoggedInUser: req.oidc.user.name
-    });
+//     res.render('excelformsubmit.ejs', {
+//         project: bomData,
+//         currentLoggedInUser: req.oidc.user.name
+//     });
 
- });
+//  });
 
 
 

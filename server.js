@@ -1,8 +1,10 @@
 const express = require('express');
+const multer = require('multer');
+const upload = multer({ dest: './public/' });
+const xlsx = require('node-xlsx').default;
+
 const app = express();
-const { JSDOM } = require( "jsdom" );
-const { window } = new JSDOM( "" );
-const $ = require( "jquery" )( window );
+
 const indexController = require('./controllers/index');
 const usersController = require('./controllers/users');
 const projectsController = require('./controllers/projects');
@@ -45,4 +47,3 @@ app.use(express.static('public'));
 app.use('/', indexController);
 app.use('/', usersController);
 app.use('/', projectsController);
-

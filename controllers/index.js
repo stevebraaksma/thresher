@@ -6,8 +6,8 @@ indexRouter.get('/index', (req, res) => {
     res.render('home.ejs');
 });
 
-indexRouter.get('/callback', (req, res) => {
-    res.redirect('/index');
-})
+// indexRouter.get('/callback', (req, res) => {
+//     res.redirect('/index');
+// })
 
 module.exports = indexRouter;

@@ -6,13 +6,9 @@ indexRouter.get('/index', (req, res) => {
     res.render('home.ejs');
 });
 
-// indexRouter.get('/callback', (req, res) => {
-//     res.redirect('/index');
-// })
-
 
 indexRouter.get('/testroute',  requiresAuth(), (req,res) => {
-    // res.render('testroute.ejs');
+
     res.redirect('/index');
 })
 

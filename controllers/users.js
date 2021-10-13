@@ -38,6 +38,10 @@ usersRouter.get('/callback', (req, res) => {
     res.redirect('/');
 })
 
+usersRouter.get('/callback/callback', (req, res) => {
+    res.redirect('/');
+})
+
 usersRouter.get('/logout', (req, res) => {
 
 })

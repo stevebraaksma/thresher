@@ -51,40 +51,13 @@
  
  
  
- 
+
  
 <%  }  %>
 
 
-</div>
-
-<form action="/price/<%= project._id %>" method="POST">
-
-    <input type="hidden" id="prj-name" name="projectName" value="<%= project.projectName%>" size="24"><br><br>
-    
-    <input type="hidden" id="createdBy" name="createdBy" value="<%=currentLoggedInUser%>">
-
-<% for (let i = 0; i < 10; i++) { %> 
-
-    <div class="abc">
-        <div class="def">
-            <div class="neat">
-                <input type="hidden" name="bom[mfgPnBom]" value="<%=project.bom[0].mfgPnBom[i]%>">
-            </div>
-            <div class="nifty">
-                <input type="hidden" name="bom[partQtyBom]" value="<%=project.bom[0].partQtyBom[i]%>">
-            </div>
-            <div class="nerfty">
-                <input type="hidden" name="bom[internalPnBom]" value="<%=project.bom[0].internalPnBom[i]%>">
-            </div>
-        </div>
-    </div>
-    
-    <% }  %>
-
-    <input type="submit" value="Get Pricing">
-
-
+<form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete Project">
 </form>
 
 </body>

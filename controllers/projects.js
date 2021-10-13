@@ -35,6 +35,12 @@ projectsRouter.get('/projects/excelnew', requiresAuth(), (req, res) => {
 });
 
 // (delete route)
+projectsRouter.delete('/projects/:id', (req, res) => {
+    Project.findByIdAndRemove(req.params.id, () => {
+        res.redirect('/projects');
+    });
+});
+
 
 // (update route)
 projectsRouter.put('/projects/:id', requiresAuth(), (req, res) => {

@@ -18,7 +18,7 @@ usersRouter.get('/profile', requiresAuth(), (req,res) => {
   // session and, if one does not exist, it will redirect the user to log in."
   // https://manage.auth0.com/dashboard/us/dev-syfi7hdt/integration-guides/F7Iy4E7LGqiJF9qvAO40JaWuhkZLF3ip/express/steps/4
   
-  
+
   // test route, screen for (if logedd in user) = to creator of the object
   
 usersRouter.get('/tester', requiresAuth(), (req, res) => {

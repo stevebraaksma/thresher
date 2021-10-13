@@ -12,23 +12,14 @@ const excelprojectsRouter = express.Router();
 const { auth, requiresAuth } = require('express-openid-connect');
 const Project = require('../models/project');
 
-
-
-
 // excel new route
 excelprojectsRouter.get('/excelprojects/excelnew', requiresAuth(), (req, res) => {
-    // res.send('hit me!')
     res.render('excelnew.ejs'), {
         currentLoggedInUser: req.oidc.user.name
     };
 });
 
-
-
-
-
-/// excel create route
-// changed from /excelprojects
+// excel create route
 excelprojectsRouter.post('/excelprojects/', upload.single('uploaded_file'), function (req, res) {
     // req.file is the name of your file in the form above, here 'uploaded_file'
     // req.body will hold the text fields, if there were any 
@@ -45,23 +36,12 @@ excelprojectsRouter.post('/excelprojects/', upload.single('uploaded_file'), func
         project: bomData,
         currentLoggedInUser: req.oidc.user.name
     });
-    // Project.create(req.body, (err, createdProject) => {
-    //     console.log(req.body);
-    //     res.redirect('/projects');
-    // });
-
-    // res.redirect('/projects');
-
  });
 
-
- excelprojectsRouter.post('/excelprojectso', (req, res) => {
+ excelprojectsRouter.post('/excelprojectso', requiresAuth(), (req, res) => {
     Project.create(req.body, (err, createdAuthor) => {
         res.redirect('/projects');
     });
 });
-
-
-
 
 module.exports = excelprojectsRouter;

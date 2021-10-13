@@ -12,10 +12,6 @@ const projectSchema = new Schema({
         partQtyBom: [Number],
         internalPnBom: [String],
     }],
-
-    mfgPn: [String],      // will be removed
-    partQty: [Number],   // will be removed
-    internalPn: [String],    // will be removed
 }, {timestamps: true});    
 
 const Project = mongoose.model('Project', projectSchema);

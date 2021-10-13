@@ -30,4 +30,20 @@ usersRouter.get('/tester', requiresAuth(), (req, res) => {
 });
 
 
+usersRouter.get('/login', (req, res) => {
+    res.redirect('/');
+})
+
+usersRouter.get('/callback', (req, res) => {
+    res.redirect('/');
+})
+
+usersRouter.get('/logout', (req, res) => {
+
+})
+
+
+
+
+
 module.exports = usersRouter;

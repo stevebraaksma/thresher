@@ -30,7 +30,7 @@ usersRouter.get('/tester', requiresAuth(), (req, res) => {
 });
 
 
-// usersRouter.get('/login', (req, res) => {
+// usersRouter.get('/logout', (req, res) => {
 //     res.redirect('/');
 // })
 
@@ -42,7 +42,8 @@ usersRouter.get('/tester', requiresAuth(), (req, res) => {
 //     res.redirect('/');
 // })
 
-// usersRouter.get('/logout', (req, res) => {
+// usersRouter.get('/', (req, res) => {
+//         res.redirect('/index');
 
 // })
 

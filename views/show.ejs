@@ -29,38 +29,29 @@
 <section>
     Updated On: <br>
     <%=project.updatedAt%>
-
     <br><br>
-
 </section>
-
 <section>
     <a href="/projects/<%= project._id %>/edit">Edit</a><br><br>
 </section>
-
 <div>
-
-<% for (let i = 0; i < project.bom[0].mfgPnBom.length; i++)  { %>  
-
-    <%console.log(project.bom)   %> 
-
-    <%console.log(project.bom[0].mfgPnBom.length)  %>
-
-   mfg Pn  <br> <%= project.bom[0].mfgPnBom[i] %>  <br>
-   party qty  <br> <%= project.bom[0].partQtyBom[i] %> <br>
-   internal pn  <br> <%= project.bom[0].internalPnBom[i] %> <br>
-   <br><br>
- 
- 
- 
-
- 
-<%  }  %>
-
-
+    <table>
+        <tr>
+          <th>Mfg p/n:</th>
+          <th>Qty:</th>
+          <th>Internal p/n:</th>
+        </tr>
+        <% for (let i = 0; i < project.bom[0].mfgPnBom.length; i++)  { %>
+        <tr>
+          <td><%= project.bom[0].mfgPnBom[i] %></td>
+          <td><%= project.bom[0].partQtyBom[i] %></td>
+          <td><%= project.bom[0].internalPnBom[i] %></td>
+        </tr>
+        <%  }  %>
+      </table>
+</div>
 <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
     <input type="submit" value="Delete Project">
 </form>
-
 </body>
 </html>

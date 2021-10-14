@@ -15,25 +15,29 @@
 
 
 <section>
-    Project Name: <br>
+    <strong>Project Name: </strong><br>
     <%=project.projectName%>
 </section><br>
 <section>
-    Created By: <br>
+    <strong>Created By: </strong><br>
     <%=project.createdBy%>
 </section><br>
 <section>
-    Created On: <br>
-    <%=project.createdAt%>
+    <strong>Created On: </strong><br>
+    <%=project.createdAt.toLocaleDateString('en-US');%>
 </section><br>
 <section>
-    Updated On: <br>
-    <%=project.updatedAt%>
+    <strong>Last Update: </strong><br>
+    <%=project.updatedAt.toLocaleDateString('en-US');%>
     <br><br>
 </section>
 <section>
     <a href="/projects/<%= project._id %>/edit">Edit</a><br><br>
 </section>
+
+
+
+
 <div>
     <table>
         <tr>

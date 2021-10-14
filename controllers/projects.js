@@ -1,14 +1,10 @@
 const express = require('express');
 const multer = require('multer');
 const upload = multer({ dest: './public/' });
-
 const xlsx = require('node-xlsx').default;
-
 const projectsRouter = express.Router();
 const { auth, requiresAuth } = require('express-openid-connect');
 const Project = require('../models/project');
-
-
 
 // index route
 projectsRouter.get('/projects', requiresAuth(), (req, res) => {

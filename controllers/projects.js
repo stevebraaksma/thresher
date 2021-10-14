@@ -13,8 +13,14 @@ const Project = require('../models/project');
 // index route
 projectsRouter.get('/projects', requiresAuth(), (req, res) => {
     Project.find({}, (err, foundProjects) => {
+        let foundProjectsValidated = [];
+        for (let i = 0; i < foundProjects.length; i++) {
+            if (req.oidc.user.name === foundProjects[i].createdBy) {
+                foundProjectsValidated.push(foundProjects[i]); 
+            };
+        };
         res.render('index.ejs', {
-            projects: foundProjects
+            projects: foundProjectsValidated
         });
     });
 });

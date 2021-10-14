@@ -41,17 +41,21 @@
           <th>Qty:</th>
           <th>Internal p/n:</th>
         </tr>
-        <% for (let i = 0; i < project.bom[0].mfgPnBom.length; i++)  { %>
-        <tr>
-          <td><%= project.bom[0].mfgPnBom[i] %></td>
-          <td><%= project.bom[0].partQtyBom[i] %></td>
-          <td><%= project.bom[0].internalPnBom[i] %></td>
+            <% for (let i = 0; i < project.bom[0].mfgPnBom.length; i++)  { %>
+                <tr>
+                <td><%= project.bom[0].mfgPnBom[i] %></td>
+                <td><%= project.bom[0].partQtyBom[i] %></td>
+                <td><%= project.bom[0].internalPnBom[i] %></td>
+            <%  }  %>
         </tr>
-        <%  }  %>
+
       </table>
 </div>
 <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
     <input type="submit" value="Delete Project">
 </form>
+<h5>Navigation</h5>
+<a class="button" href="/projects">Project History</a>
+<a class="button" href="/index">Home</a>
 </body>
 </html>

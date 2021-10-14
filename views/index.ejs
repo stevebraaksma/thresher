@@ -15,15 +15,16 @@
 
 <h3>Project History</h3>
 <ul>
-    <% for(let i = 0; i < projects.length; i++) { %>   
-    <li>
-    <a href="/projects/<%=projects[i]._id %>">  <%=projects[i].projectName%>  </a>
+        <% for(let i = 0; i < projects.length; i++) { %>   
+                <li>
+                <a href="/projects/<%=projects[i]._id %>">  <%=projects[i].projectName%>  </a>
 
-    </li>
-    <%  }  %>
+                </li>
+        <%  }  %>
 
 </ul>
 
-    
+<h5>Navigation</h5>
+<a class="button" href="/index">Home</a>
 </body>
 </html>

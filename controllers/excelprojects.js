@@ -20,18 +20,10 @@ excelprojectsRouter.get('/excelprojects/excelnew', requiresAuth(), (req, res) =>
 });
 
 // excel create route
-excelprojectsRouter.post('/excelprojects/', upload.single('uploaded_file'), function (req, res) {
-    // req.file is the name of your file in the form above, here 'uploaded_file'
-    // req.body will hold the text fields, if there were any 
-    console.log(req.file, req.body)
+excelprojectsRouter.post('/excelprojects/', upload.single('uploaded_file'), function (req, res) { 
     const myFile = req.file.filename;
-    console.log(myFile);
     const workSheetsFromFile = xlsx.parse(`public/${myFile}`);
-    console.log(workSheetsFromFile);
-    console.log(workSheetsFromFile[0].data);
-
     const bomData = workSheetsFromFile[0].data;
-
     res.render('excelformsubmit.ejs', {
         project: bomData,
         currentLoggedInUser: req.oidc.user.name

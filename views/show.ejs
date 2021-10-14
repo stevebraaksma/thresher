@@ -32,12 +32,8 @@
     <br><br>
 </section>
 <section>
-    <a href="/projects/<%= project._id %>/edit">Edit</a><br><br>
+<a class="button" href="/projects/<%= project._id %>/edit">Edit Project</a>
 </section>
-
-
-
-
 <div>
     <table>
         <tr>
@@ -52,7 +48,6 @@
                 <td><%= project.bom[0].internalPnBom[i] %></td>
             <%  }  %>
         </tr>
-
       </table>
 </div>
 <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">

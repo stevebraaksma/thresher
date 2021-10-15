@@ -22,10 +22,11 @@ Intended for use by small Electronics Manufacturing Services (EMS) companies. Ty
 
 
 # Screenshots
-![screenshot 1](./thresher-wireframe.png)
+![screenshot 1](./thresher-home.png)
 
 # Getting Started
-[Click here](https://thresherapp.herokuapp.com/) to see the deployed Project 
+[Click here](https://thresherapp.herokuapp.com/) to see the deployed Project.
+On the home page, choose to manually enter parts, or upload Excel spreadsheet.
 
 # Future Enhancements
 

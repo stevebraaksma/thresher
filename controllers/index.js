@@ -14,7 +14,7 @@ indexRouter.get('/index', (req, res) => {
 
 
 // future new home
-indexRouter.get('/index', (req, res) => {
+indexRouter.get('/newlanding', (req, res) => {
     res.render('landing.ejs');
 });
 

@@ -6,8 +6,16 @@ indexRouter.get('/', (req, res) => {
     res.redirect('/index');
 });
 
+
+// original home page
 indexRouter.get('/index', (req, res) => {
     res.render('home.ejs');
+});
+
+
+// future new home
+indexRouter.get('/index', (req, res) => {
+    res.render('landing.ejs');
 });
 
 module.exports = indexRouter;

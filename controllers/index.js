@@ -18,4 +18,9 @@ indexRouter.get('/newlanding', (req, res) => {
     res.render('landing.ejs');
 });
 
+// original home page
+indexRouter.get('/index-new', (req, res) => {
+    res.render('index-new.ejs');
+});
+
 module.exports = indexRouter;

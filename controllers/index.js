@@ -3,7 +3,7 @@ const indexRouter = express.Router();
 const { auth, requiresAuth } = require('express-openid-connect');
 
 indexRouter.get('/', (req, res) => {
-    res.redirect('/index');
+    res.redirect('/landing');
 });
 
 

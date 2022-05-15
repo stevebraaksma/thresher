@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=/normalize.css>
-    <link rel="stylesheet" href=/skeleton.css>
-    <link rel="stylesheet" href=/style.css>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href=/normalize.css> <link rel="stylesheet"
+    href=/skeleton.css> <link rel="stylesheet" href=/style.css>
     <title>🦈 Thresher EMS Solutions</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>🦈 Thresher EMS Solutions</h1>
 
-<h1>🦈 Thresher EMS Solutions</h1>
-
-
-<section>
-    <strong>Project Name: </strong><br>
-    <%=project.projectName%>
-</section><br>
-<section>
-    <strong>Created By: </strong><br>
-    <%=project.createdBy%>
-</section><br>
-<section>
-    <strong>Created On: </strong><br>
-    <%=project.createdAt.toLocaleDateString('en-US');%>
-</section><br>
-<section>
-    <strong>Last Update: </strong><br>
-    <%=project.updatedAt.toLocaleDateString('en-US');%>
-    <br><br>
-</section>
-<section>
-<a class="button" href="/projects/<%= project._id %>/edit">Edit Project</a>
-</section>
-<div>
-    <table>
+    <section>
+      <strong>Project Name: </strong><br />
+      <%=project.projectName%>
+    </section>
+    <br />
+    <section>
+      <strong>Created By: </strong><br />
+      <%=project.createdBy%>
+    </section>
+    <br />
+    <section>
+      <strong>Created On: </strong><br />
+      <%=project.createdAt.toLocaleDateString('en-US');%>
+    </section>
+    <br />
+    <section>
+      <strong>Last Update: </strong><br />
+      <%=project.updatedAt.toLocaleDateString('en-US');%>
+      <br /><br />
+    </section>
+    <section>
+      <a class="button" href="/projects/<%= project._id %>/edit"
+        >Edit Project</a
+      >
+    </section>
+    <div>
+      <table>
         <tr>
           <th>Mfg p/n:</th>
           <th>Qty:</th>
           <th>Internal p/n:</th>
         </tr>
-            <% for (let i = 0; i < project.bom[0].mfgPnBom.length; i++)  { %>
-                <tr>
-                <td><%= project.bom[0].mfgPnBom[i] %></td>
-                <td><%= project.bom[0].partQtyBom[i] %></td>
-                <td><%= project.bom[0].internalPnBom[i] %></td>
-            <%  }  %>
+        <% for (let i = 0; i < project.bom[0].mfgPnBom.length; i++) { %>
+        <tr>
+          <td><%= project.bom[0].mfgPnBom[i] %></td>
+          <td><%= project.bom[0].partQtyBom[i] %></td>
+          <td><%= project.bom[0].internalPnBom[i] %></td>
+          <% } %>
         </tr>
       </table>
-</div>
-<form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
-    <input type="submit" value="Delete Project">
-</form>
-<h5>Navigation</h5>
-<a class="button" href="/projects">Project History</a>
-<a class="button" href="/index">Home</a>
-</body>
+    </div>
+    <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
+      <input type="submit" value="Delete Project" />
+    </form>
+    <h5>Navigation</h5>
+    <a class="button" href="/projects">Project History</a>
+    <a class="button" href="/home">Home</a>
+  </body>
 </html>

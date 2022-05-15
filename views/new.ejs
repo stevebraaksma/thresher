@@ -1,101 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=/normalize.css>
-    <link rel="stylesheet" href=/skeleton.css>
-    <link rel="stylesheet" href=/style.css>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href=/normalize.css> <link rel="stylesheet"
+    href=/skeleton.css> <link rel="stylesheet" href=/style.css>
     <title>🦈 Thresher EMS Solutions</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>🦈 Thresher EMS Solutions</h1>
 
-<h1>🦈 Thresher EMS Solutions</h1>
+    <form action="/projects" method="POST">
+      <label for="projectName">Project Name: </label><br />
+      <input
+        type="text"
+        id="prj-name"
+        name="projectName"
+        size="24"
+      /><br /><br />
 
+      <input
+        type="hidden"
+        id="createdBy"
+        name="createdBy"
+        value="<%=currentLoggedInUser%>"
+      />
 
-<form action="/projects" method="POST">
-
-<label for="projectName">Project Name: </label><br>
-<input type="text" id="prj-name" name="projectName" size="24"><br><br>
-
-<input type="hidden" id="createdBy" name="createdBy" value="<%=currentLoggedInUser%>">
-
-
-<div class="abc">
-    <div class="def">
-        <div class ="neat">
-            <label for="mfgPn">Mfg p/n:</label>
-        </div>
-        <div class ="nifty">
-            <label for="partQty">Qty</label>
-        </div>
-        <div class ="nerfty">
-            <label for="internalPn">Internal p/n:</label>
-        </div>
-    </div>
-</div>
-
-<div class="abc">
-    <div class="def">
-        <div class="neat">
-
-
-
-            <input type="text" name="bom[mfgPnBom]">
-        </div>
-        <div class="nifty">
-            <input type="text" name="bom[partQtyBom]">
-        </div>
-        <div class="nerfty">
-            <input type="text" name="bom[internalPnBom]">
-        </div>
-    </div>
-</div>
-
-<div class="abc">
-    <div class="def">
-        <div class="neat">
-            <input type="text" name="bom[mfgPnBom]">
-        </div>
-        <div class="nifty">
-            <input type="text" name="bom[partQtyBom]">
-        </div>
-        <div class="nerfty">
-            <input type="text" name="bom[internalPnBom]">
-        </div>
-    </div>
-</div>
-
-<% for (let i = 0; i < 10; i++) { %>   
-
-    <div class="abc">
+      <div class="abc">
         <div class="def">
-            <div class="neat">
-                <input type="text" name="bom[mfgPnBom]">
-            </div>
-            <div class="nifty">
-                <input type="text" name="bom[partQtyBom]">
-            </div>
-            <div class="nerfty">
-                <input type="text" name="bom[internalPnBom]">
-            </div>
+          <div class="neat">
+            <label for="mfgPn">Mfg p/n:</label>
+          </div>
+          <div class="nifty">
+            <label for="partQty">Qty</label>
+          </div>
+          <div class="nerfty">
+            <label for="internalPn">Internal p/n:</label>
+          </div>
         </div>
-    </div>
+      </div>
 
+      <div class="abc">
+        <div class="def">
+          <div class="neat">
+            <input type="text" name="bom[mfgPnBom]" />
+          </div>
+          <div class="nifty">
+            <input type="text" name="bom[partQtyBom]" />
+          </div>
+          <div class="nerfty">
+            <input type="text" name="bom[internalPnBom]" />
+          </div>
+        </div>
+      </div>
 
-    <% }  %>
+      <div class="abc">
+        <div class="def">
+          <div class="neat">
+            <input type="text" name="bom[mfgPnBom]" />
+          </div>
+          <div class="nifty">
+            <input type="text" name="bom[partQtyBom]" />
+          </div>
+          <div class="nerfty">
+            <input type="text" name="bom[internalPnBom]" />
+          </div>
+        </div>
+      </div>
 
+      <% for (let i = 0; i < 10; i++) { %>
 
+      <div class="abc">
+        <div class="def">
+          <div class="neat">
+            <input type="text" name="bom[mfgPnBom]" />
+          </div>
+          <div class="nifty">
+            <input type="text" name="bom[partQtyBom]" />
+          </div>
+          <div class="nerfty">
+            <input type="text" name="bom[internalPnBom]" />
+          </div>
+        </div>
+      </div>
 
-<br>
-<input type="submit" value="Submit">
+      <% } %>
 
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
 
-</form>
-
-<h5>Navigation</h5>
-<a class="button" href="/projects">Project History</a>
-<a class="button" href="/index">Home</a>
-</body>
+    <h5>Navigation</h5>
+    <a class="button" href="/projects">Project History</a>
+    <a class="button" href="/home">Home</a>
+  </body>
 </html>

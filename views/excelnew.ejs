@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=/normalize.css>
-    <link rel="stylesheet" href=/skeleton.css>
-    <link rel="stylesheet" href=/style.css>
-    
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href=/normalize.css> <link rel="stylesheet"
+    href=/skeleton.css> <link rel="stylesheet" href=/style.css>
+
     <title>🦈 Thresher EMS Solutions</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>🦈 Thresher EMS Solutions</h1>
 
-<h1>🦈 Thresher EMS Solutions</h1>
+    <h2>Upload New Project Using Excel</h2>
 
-<h2>Upload New Project Using Excel</h2>
+    <form action="/excelprojects" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <input type="file" class="form-control-file" name="uploaded_file" />
 
+        <input type="submit" value="Upload" class="btn btn-default" />
+      </div>
+    </form>
 
-<form action="/excelprojects" method="POST" enctype="multipart/form-data">
-
-    <div class="form-group">
-
-        <input type="file" class="form-control-file" name="uploaded_file">
-        
-        <input type="submit" value="Upload" class="btn btn-default">
-
-
-
-    </div>
-
-
-</form>
-
-<h5>Navigation</h5>
-<a class="button" href="/projects">Project History</a>
-<a class="button" href="/index">Home</a>
-</body>
+    <h5>Navigation</h5>
+    <a class="button" href="/projects">Project History</a>
+    <a class="button" href="/home">Home</a>
+  </body>
 </html>

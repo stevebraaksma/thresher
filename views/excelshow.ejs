@@ -1,67 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=/normalize.css>
-    <link rel="stylesheet" href=/skeleton.css>
-    <link rel="stylesheet" href=/style.css>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href=/normalize.css> <link rel="stylesheet"
+    href=/skeleton.css> <link rel="stylesheet" href=/style.css>
     <script src="/jquery.js"></script>
     <title>🦈 Thresher EMS Solutions</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>🦈 Thresher EMS Solutions</h1>
 
-<h1>🦈 Thresher EMS Solutions</h1>
+    <section>
+      Project Name: <br />
+      <%=project.projectName%>
+    </section>
+    <br />
+    <section>
+      Created By: <br />
+      <%=project.createdBy%>
+    </section>
+    <br />
+    <section>
+      Created On: <br />
+      <%=project.createdAt%>
+    </section>
+    <br />
+    <section>
+      Updated On: <br />
+      <%=project.updatedAt%>
 
+      <br /><br />
+    </section>
 
-<section>
-    Project Name: <br>
-    <%=project.projectName%>
-</section><br>
-<section>
-    Created By: <br>
-    <%=project.createdBy%>
-</section><br>
-<section>
-    Created On: <br>
-    <%=project.createdAt%>
-</section><br>
-<section>
-    Updated On: <br>
-    <%=project.updatedAt%>
+    <section>
+      <a href="/projects/<%= project._id %>/edit">Edit</a><br /><br />
+    </section>
 
-    <br><br>
+    <div>
+      <% for (let i = 0; i < project.bom[0].mfgPnBom.length; i++) { %>
+      <%console.log(project.bom) %>
+      <%console.log(project.bom[0].mfgPnBom.length) %> mfg Pn <br />
+      <%= project.bom[0].mfgPnBom[i] %> <br />
+      party qty <br />
+      <%= project.bom[0].partQtyBom[i] %> <br />
+      internal pn <br />
+      <%= project.bom[0].internalPnBom[i] %> <br />
+      <br /><br />
 
-</section>
-
-<section>
-    <a href="/projects/<%= project._id %>/edit">Edit</a><br><br>
-</section>
-
-<div>
-
-<% for (let i = 0; i < project.bom[0].mfgPnBom.length; i++)  { %>  
-
-    <%console.log(project.bom)   %> 
-
-    <%console.log(project.bom[0].mfgPnBom.length)  %>
-
-   mfg Pn  <br> <%= project.bom[0].mfgPnBom[i] %>  <br>
-   party qty  <br> <%= project.bom[0].partQtyBom[i] %> <br>
-   internal pn  <br> <%= project.bom[0].internalPnBom[i] %> <br>
-   <br><br>
- 
- 
- 
- 
- 
-<%  }  %>
-
-
-</div>
-<h5>Navigation</h5>
-<a class="button" href="/projects">Project History</a>
-<a class="button" href="/index">Home</a>
-</body>
+      <% } %>
+    </div>
+    <h5>Navigation</h5>
+    <a class="button" href="/projects">Project History</a>
+    <a class="button" href="/home">Home</a>
+  </body>
 </html>

@@ -12,6 +12,11 @@ indexRouter.get('/home', (req, res) => {
     res.render('home.ejs');
 });
 
+// updating
+indexRouter.get('/home-new', (req, res) => {
+    res.render('home-new.ejs');
+});
+
 
 // future new home
 indexRouter.get('/', (req, res) => {

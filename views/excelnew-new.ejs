@@ -55,18 +55,15 @@
       </div>
     </nav>
 
-    <!-- info -->
     <section id="learn" class="p-5 bg-primary">
-      <div class="container">
-        <h2 class="text-white pb-4">Get Started:</h2>
-        <a class="btn btn-warning" href="/projects/new"
-          >Enter Components Manually
-        </a>
-        <br /><br />
-        <a class="btn btn-warning" href="/excelprojects/excelnew"
-          >Upload Components Using Excel</a
-        >
-      </div>
+      <h2>Upload New Project Using Excel</h2>
+      <form action="/excelprojects" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <input type="file" class="form-control-file" name="uploaded_file" />
+
+          <input type="submit" value="Upload" class="btn btn-default" />
+        </div>
+      </form>
     </section>
 
     <!-- Footer -->

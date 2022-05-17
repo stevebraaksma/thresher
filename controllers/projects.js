@@ -36,13 +36,6 @@ projectsRouter.get('/projects/excelnew', requiresAuth(), (req, res) => {
     });
 });
 
-// excel new route
-projectsRouter.get('/projects/excelnew-new', requiresAuth(), (req, res) => {
-    console.log(req.body);
-    res.render('excelnew-new.ejs', {
-        currentLoggedInUser: req.oidc.user.name
-    });
-});
 
 // (delete route)
 projectsRouter.delete('/projects/:id', (req, res) => {

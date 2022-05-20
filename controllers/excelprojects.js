@@ -7,7 +7,7 @@ const { auth, requiresAuth } = require('express-openid-connect');
 const Project = require('../models/project');
 
 // excel new route
-excelprojectsRouter.get('/excelprojects/excelnew-new', requiresAuth(), (req, res) => {
+excelprojectsRouter.get('/excelprojects/excelnew', requiresAuth(), (req, res) => {
     res.render('excelnew-new.ejs'), {
         currentLoggedInUser: req.oidc.user.name
     };

@@ -5,6 +5,8 @@ const xlsx = require('node-xlsx').default;
 const excelprojectsRouter = express.Router();
 const { auth, requiresAuth } = require('express-openid-connect');
 const Project = require('../models/project');
+const axios = require('axios');
+
 
 let bomData = [];
 
@@ -31,8 +33,8 @@ excelprojectsRouter.post('/excelprojects/', upload.single('uploaded_file'), func
 
     // console.log(bomData);
     testerHello();
-    addPriceStockToBomData ()
-
+    addPriceStockToBomData();
+    getPriceStock();
 
 
     res.render('excelformsubmit.ejs', {
@@ -55,10 +57,30 @@ function testerHello () {
 }
 
 function getPriceStock () {
+    for (let i = 1; i < bomData.length; i++) {
+        let currentPartNum = bomData[i][0];
 
-    
+        axios({
+            method: 'post',
+            url: "https://api.mouser.com/api/v1/search/keyword?apiKey=53cd927d-3725-4cce-aaa8-50851d7c13f6",
+            data: {
+                SearchByKeywordRequest: {
+                            keyword: currentPartNum
+                    }
+            }
+        })
+        .then( (response)=>{
+            // addPriceStockToBomData ();
+            console.log(response);
 
 
+            })
+        .catch((err) => {
+            console.log(err);
+        })
+
+
+    };
 };
 
 function addPriceStockToBomData () {
@@ -77,9 +99,8 @@ function addPriceStockToBomData () {
     for (let i = 1; i < bomData.length; i++) {
         // add in the price in the 3rd position of each item
         bomData[i][3] = 'price';
-        // and in the stock in the 4th position of each item
+        // add in the stock in the 4th position of each item
         bomData[i][4] = 'stock';
-        console.log('woof')
     };
     console.log(bomData);
 

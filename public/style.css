@@ -1,0 +1,55 @@
+
+/* div {
+    border: solid 1px black;
+} */
+
+
+/* body {
+    background-image: url("./thresher.jpeg");
+} */
+
+body {
+    background-color: azure;
+    margin: 30px;
+}
+
+#thresher-img {
+    width: 300px;
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    outline-style: solid;
+    border: 2px;
+    border-color: black;
+
+}
+
+div {
+    margin: 1px;
+}
+
+.abc {
+    display: flex;
+    flex-direction: column;
+}
+
+.def {
+    display: flex;
+}
+
+.neat {
+    width: 20%;
+}
+
+.nifty {
+    width: 20%;
+}
+
+.nerfty {
+    width: 20%;
+}
+
+.show-page span {
+    display: inline-block;
+}
